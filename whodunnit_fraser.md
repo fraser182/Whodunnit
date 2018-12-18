@@ -205,7 +205,6 @@ const changeScenario = function() {
       scenario.murderer = 'Colonel Mustard';
     }
 // scenario.weapon = Lead Pipe
-
     const unexpectedOutcome = function(murderer) {
       if (scenario.murderer === murderer) {
         scenario.weapon = 'Candle Stick';
