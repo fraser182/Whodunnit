@@ -33,11 +33,12 @@ console.log(verdict);
 
 ```js
 const murderer = 'Professor Plum';
+//murderer Prof Plum
 
 const changeMurderer = function() {
   murderer = 'Mrs. Peacock';
 }
-
+// murderer Mrs Peacock
 const declareMurderer = function() {
   return `The murderer is ${murderer}.`;
 }
@@ -55,18 +56,21 @@ console.log(verdict);
 
 ```js
 let murderer = 'Professor Plum';
+// murderer = Prof Plum
 
 const declareMurderer = function() {
   let murderer = 'Mrs. Peacock';
   return `The murderer is ${murderer}.`;
 }
+// declareMurderer = Mrs Peacock
 
 const firstVerdict = declareMurderer();
 console.log('First Verdict: ', firstVerdict);
+// First Verdict calls declareMurderer = Mrs Peacock
 
 const secondVerdict = `The murderer is ${murderer}.`;
 console.log('Second Verdict: ', secondVerdict);
-// First Verdict: Mrs. Peacock
+
 // Second Verdict: Professor Plum
 
 ```
@@ -98,14 +102,18 @@ const scenario = {
   room: 'Kitchen',
   weapon: 'Candle Stick'
 };
+// scenario.weapon = Candle Stick
 
 const changeWeapon = function(newWeapon) {
   scenario.weapon = newWeapon;
 }
+// function changeWeapon defines new weapon
+// scenario.weapon = Candle Stick
 
 const declareWeapon = function() {
   return `The weapon is the ${scenario.weapon}.`;
 }
+// declare
 
 changeWeapon('Revolver');
 const verdict = declareWeapon();
@@ -117,16 +125,19 @@ console.log(verdict);
 
 ```js
 let murderer = 'Colonel Mustard';
+// murderer = Colonel Mustard
 
 const changeMurderer = function() {
   murderer = 'Mr. Green';
+  // murderer = Mr Green
 
   const plotTwist = function() {
     murderer = 'Mrs. White';
 
   }
-
+  // murderer =#1 Mr Green
   plotTwist();
+  // murderer = Mrs White
 }
 
 const declareMurderer = function () {
@@ -146,28 +157,32 @@ let murderer = 'Professor Plum';
 
 const changeMurderer = function() {
   murderer = 'Mr. Green';
+// murderer = Mr Green
 
   const plotTwist = function() {
     let murderer = 'Colonel Mustard';
-
+// murderer = Colonel Mustard
     const unexpectedOutcome = function() {
       murderer = 'Miss Scarlet';
+      // murderer = Miss Scarlett
     }
-
+// murderer = Colonel Mustard
     unexpectedOutcome();
-  }
-
+// murderer = Miss Scarlett
+} // end of plotTwist
+// murderer = Mr Green
   plotTwist();
 }
-
+// murderer = Professor Plum
 const declareMurderer = function() {
   return `The murderer is ${murderer}.`;
-}
 
+}
+// murderer = Professor Plum
 changeMurderer();
 const verdict = declareMurderer();
 console.log(verdict);
-// The murderer is Mr Green
+// The murderer is Mr Green (runs declareMurderer)
 ```
 
 #### Episode 8
@@ -178,15 +193,18 @@ const scenario = {
   room: 'Conservatory',
   weapon: 'Lead Pipe'
 };
+// weapon = Lead pipe
 
 const changeScenario = function() {
   scenario.murderer = 'Mrs. Peacock';
   scenario.room = 'Dining Room';
+// scenario.weapon = Lead Pipe
 
   const plotTwist = function(room) {
     if (scenario.room === room) {
       scenario.murderer = 'Colonel Mustard';
     }
+// scenario.weapon = Lead Pipe
 
     const unexpectedOutcome = function(murderer) {
       if (scenario.murderer === murderer) {
